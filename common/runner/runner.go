@@ -724,9 +724,9 @@ func (r *Runner) CalcSecScore(advisories []vulstruct.Info) CallbackReportInfo {
 	var total, high, middle, low int = 0, 0, 0, 0
 	total = len(advisories)
 	for _, item := range advisories {
-		if item.Severity == "HIGH" || item.Severity == "CRITICAL" || item.RiskType == "高危" || item.RiskType == "严重" {
+		if item.Severity == "HIGH" || item.Severity == "CRITICAL" {
 			high++
-		} else if item.Severity == "MEDIUM" || item.RiskType == "中危" {
+		} else if item.Severity == "MEDIUM" {
 			middle++
 		} else {
 			low++
